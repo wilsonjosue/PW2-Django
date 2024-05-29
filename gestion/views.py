@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .forms import AlumnoForm, CursoForm, NotaForm
-from .models import Alumno, Curso, Nota
+from .models import Alumno, Curso, NotaAlumnosPorCurso
 # Create your views here.
 
 def crearAlumno(request):
@@ -43,8 +43,5 @@ def crearNota(request):
     return render(request, 'gestion/crearNota.html', {'form': form})
 
 def listaNotas(request):
-    notas = Nota.objects.all()
+    notas = NotaAlumnosPorCurso.objects.all()
     return render(request, 'gestion/listaNotas.html', {'notas': notas})
-
-
- 
