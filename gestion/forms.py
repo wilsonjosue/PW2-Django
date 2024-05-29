@@ -1,5 +1,5 @@
 from django import forms
-from .models import Alumno, Curso, Nota
+from .models import Alumno, Curso, NotaAlumnosPorCurso
 
 class AlumnoForm(forms.ModelForm):
     class Meta:
@@ -13,5 +13,5 @@ class CursoForm(forms.ModelForm):
 
 class NotaForm(forms.ModelForm):
     class Meta:
-        model = Nota
+        model = NotaAlumnosPorCurso
         fields = ['alumno', 'curso', 'nota']
