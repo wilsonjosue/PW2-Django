@@ -32,5 +32,17 @@ def listaCursos(request):
     cursos = Curso.objects.all()
     return render(request, 'gestion/listaCursos.html', {'cursos': cursos})
 
+def crear_nota(request):
+    if request.method == 'POST':
+        form = NotaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('listaNotas')
+    else:
+        form = NotaForm()
+    return render(request, 'gestion/crearNota.html', {'form': form})
+
+
+
 
  
