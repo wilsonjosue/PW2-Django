@@ -22,5 +22,8 @@ class Nota(models.Model):
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
     nota = models.DecimalField(max_digits=5, decimal_places=2)
 
+    def __str__(self):
+        
+        return f"{self.alumno} - {self.curso}: {self.nota}"
    
 
