@@ -18,5 +18,16 @@ def listaAlumnos(request):
     alumnos = Alumno.objects.all()
     return render(request, 'gestion/listaAlumnos.html', {'alumnos': alumnos})
 
+def crearCurso(request):
+    if request.method == 'POST':
+        form = CursoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('listaCursos')
+    else:
+        form = CursoForm()
+    return render(request, 'gestion/crearCurso.html', {'form': form})
+
+
 
  
