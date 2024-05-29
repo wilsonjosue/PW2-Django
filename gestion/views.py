@@ -28,6 +28,9 @@ def crearCurso(request):
         form = CursoForm()
     return render(request, 'gestion/crearCurso.html', {'form': form})
 
+def listaCursos(request):
+    cursos = Curso.objects.all()
+    return render(request, 'gestion/listaCursos.html', {'cursos': cursos})
 
 
  
