@@ -7,5 +7,9 @@ class Alumno(models.Model):
     apellido = models.CharField(max_length=200)
     matricula = models.CharField(max_length=200, unique=True)
 
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}."
+    
+class 
 
 
