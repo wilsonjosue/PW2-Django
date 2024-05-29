@@ -13,4 +13,10 @@ def crearAlumno(request):
     else:
         form = AlumnoForm()
     return render(request, 'gestion/crearAlumno.html', {'form': form}) 
+
+def listaAlumnos(request):
+    alumnos = Alumno.objects.all()
+    return render(request, 'gestion/listaAlumnos.html', {'alumnos': alumnos})
+
+
  
