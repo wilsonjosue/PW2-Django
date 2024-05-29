@@ -17,7 +17,10 @@ class Curso(models.Model):
     def __str__(self):
         return self.nombre
 
-class Nota 
+class Nota(models.Model): 
+    alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
+    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    nota = models.DecimalField(max_digits=5, decimal_places=2)
 
    
 
