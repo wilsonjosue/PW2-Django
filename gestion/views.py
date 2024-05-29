@@ -32,7 +32,7 @@ def listaCursos(request):
     cursos = Curso.objects.all()
     return render(request, 'gestion/listaCursos.html', {'cursos': cursos})
 
-def crear_nota(request):
+def crearNota(request):
     if request.method == 'POST':
         form = NotaForm(request.POST)
         if form.is_valid():
@@ -42,7 +42,9 @@ def crear_nota(request):
         form = NotaForm()
     return render(request, 'gestion/crearNota.html', {'form': form})
 
-
+def listaNotas(request):
+    notas = Nota.objects.all()
+    return render(request, 'gestion/listaNotas.html', {'notas': notas})
 
 
  
