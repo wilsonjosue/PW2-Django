@@ -5,6 +5,13 @@
 </head>
 <body>
     <h1>Lista de Cursos</h1>
+    
+    <ul>
+        {% for curso in cursos %}
+            <li>{{ curso.nombre }} - Código: {{ curso.codigo }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crearCurso' %}">Crear nuevo curso</a>
 
 </body>
 </html>
